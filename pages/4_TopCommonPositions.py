@@ -1,12 +1,13 @@
 import streamlit as st
 import plotly.express as px
 import pandas as pd
+import os
 
 st.set_page_config(page_title="Top Common Positions in my Network")
 
 st.sidebar.success("Top Common Positions of the people in my Network.Majority being Software Engineers.")
 
-connections_df = pd.read_csv("Connections.csv")
+connections_df = pd.read_csv(os.path.join(os.getcwd(),"Connections.csv"))
 
 # lower the words because people tend to write the same titles with different cases
 connections_df['Position'] = connections_df['Position'].str.title()
