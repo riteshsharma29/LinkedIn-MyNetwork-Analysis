@@ -7,7 +7,7 @@ st.set_page_config(page_title="Top Common Positions in my Network")
 
 st.sidebar.success("Top Common Positions of the people in my Network.Majority being Software Engineers.")
 
-connections_df = pd.read_csv(os.path.join(os.getcwd(),"Connections.csv"))
+connections_df = pd.read_csv(os.path.join(os.getcwd(),"pages/Connections.csv"))
 
 # lower the words because people tend to write the same titles with different cases
 connections_df['Position'] = connections_df['Position'].str.title()
