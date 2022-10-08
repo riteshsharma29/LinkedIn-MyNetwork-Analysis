@@ -3,13 +3,13 @@ import plotly.express as px
 import pandas as pd
 from wordcloud import WordCloud, STOPWORDS, ImageColorGenerator
 import matplotlib.pyplot as plt
-
+import os
 
 st.set_page_config(page_title="WordCloud of MyConnections")
 
 st.sidebar.success("Finally displaying  WordCloud of MyConnections.")
 
-connections_df = pd.read_csv("Connections.csv")
+connections_df = pd.read_csv(os.path.join(os.getcwd(),"Connections.csv"))
 
 positions = ' '.join(connections_df[~connections_df.Position.str.lower().isnull()].Position.unique())
 
