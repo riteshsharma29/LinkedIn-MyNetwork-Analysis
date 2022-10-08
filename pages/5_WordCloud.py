@@ -9,7 +9,7 @@ st.set_page_config(page_title="WordCloud of MyConnections")
 
 st.sidebar.success("Finally displaying  WordCloud of MyConnections.")
 
-connections_df = pd.read_csv(os.path.join(os.getcwd(),"Connections.csv"))
+connections_df = pd.read_csv(os.path.join(os.getcwd(),"pages/Connections.csv"))
 
 positions = ' '.join(connections_df[~connections_df.Position.str.lower().isnull()].Position.unique())
 
