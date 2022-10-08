@@ -7,7 +7,7 @@ st.set_page_config(page_title="Company Connections Work@")
 
 st.sidebar.success("<Connected On> indicates Which organizations do the people in my network work at. Visualization is represented with Plotly Bar chart.")
 
-connections_df = pd.read_csv(os.path.join(os.getcwd(),"Connections.csv"))
+connections_df = pd.read_csv(os.path.join(os.getcwd(),"pages/Connections.csv"))
 company_groupby = connections_df.groupby(by='Company').count().reset_index().sort_values(by='First Name', ascending=False).reset_index(drop=True)
 
 fig = px.bar(company_groupby[:100],
